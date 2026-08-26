@@ -3,7 +3,7 @@
 Week 1 Studio Onboarding project for WebWorks Studio.
 
 ## Developer
-YOUR NAME
+Daisy Sandoval
 
 ## Role
 Junior Web Developer
@@ -12,7 +12,7 @@ Junior Web Developer
 Studio Onboarding & GitHub Workspace Setup
 
 ## Live Site
-GITHUB PAGES URL
+https://daisys101.github.io/webworks-studio/
 
 ## Week 1 Requirements
 - Edit project files in Visual Studio Code.
