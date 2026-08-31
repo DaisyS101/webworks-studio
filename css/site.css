@@ -1,92 +1,392 @@
-/* Southtown Plant Co. legacy style sheet
-   Last updated: 08/17/2000
+/* Southtown Plant Co.
+   Legacy stylesheet with a clearer structure and fixed-width layout.
 */
 
+:root {
+  --page-bg: #e8e1c9;
+  --panel-bg: #ffffff;
+  --top-bar: #315c3d;
+  --accent: #315c3d;
+  --dark-accent: #234457;
+  --text: #333333;
+  --muted: #4c5148;
+  --highlight: #f4eac8;
+  --soft: #efe7ce;
+  --rule: #c8be9d;
+  --border: #d5ccae;
+  --link: #285b39;
+  --visited: #6c4e32;
+  --hover: #993300;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+p,
+li,
+address {
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+  margin: 0 0 1em;
 }
 
-.intro {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 23px;
-  color: #4C5148;
-}
-
-h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  color: #315C3D;
-  font-size: 24px;
-  margin-bottom: 8px;
+strong,
+b {
+  font-weight: 700;
 }
 
 a {
-  color: #285B39;
+  color: var(--link);
 }
 
 a:hover {
-  color: #993300;
+  color: var(--hover);
 }
 
-.navcell {
-  background-color: #315C3D;
+a:visited {
+  color: var(--visited);
+}
+
+a:active {
+  color: var(--hover);
+}
+
+a:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.page-shell {
+  width: 760px;
+  margin: 18px auto;
+  background: var(--panel-bg);
+}
+
+.content-frame {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.top-bar,
+.bottom-bar {
+  height: 12px;
+  background: var(--top-bar);
+}
+
+.site-header {
+  background: #ffffff;
+}
+
+.masthead {
+  overflow: hidden;
+}
+
+.brand {
+  float: left;
+  display: block;
+  width: 270px;
+}
+
+.contact-info {
+  float: right;
+  width: 450px;
+  padding-top: 30px;
+  text-align: right;
+  font-size: 12px;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.main-nav {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-nav li {
+  float: left;
+  width: 120px;
   height: 34px;
+  background: var(--top-bar);
+  text-align: center;
 }
 
-.navcell a {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #FFFFFF;
+.main-nav a {
+  display: block;
+  color: #ffffff;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
+  line-height: 34px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
-.navcell a:hover {
-  color: #FFF3B8;
+.main-nav a:hover {
+  color: #fff3b8;
+}
+
+.hero {
+  overflow: hidden;
+  padding-top: 16px;
+}
+
+.hero-copy {
+  float: left;
+  width: 420px;
+}
+
+.hero-copy h1,
+.hero-copy h2,
+.hero-copy h3,
+section h2,
+section h3,
+.visit-card h3 {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 23px;
+  color: var(--muted);
+}
+
+.promo-banner {
+  background: var(--highlight);
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.promo-banner strong {
+  font-size: 12px;
+}
+
+.cta {
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.hero-media {
+  float: right;
+  width: 280px;
+  text-align: right;
 }
 
 .photo {
-  border: 1px solid #9E9475;
+  border: 1px solid #9e9475;
 }
 
-.footertext {
-  font-family: Arial, Helvetica, sans-serif;
+.divider {
+  height: 4px;
+  margin: 18px 0 12px;
+  background: var(--top-bar);
+}
+
+.plant-grid {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.plant-item {
+  float: left;
+  width: 33.333%;
+  min-height: 160px;
+  padding: 10px;
+  background: #f6f0da;
+  border: 1px solid var(--border);
+  border-left: none;
+}
+
+.plant-item:first-child {
+  border-left: 1px solid var(--border);
+}
+
+.plant-item h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.plant-item p {
+  margin-bottom: 10px;
+}
+
+.content-columns {
+  overflow: hidden;
+  margin-top: 22px;
+}
+
+.quick-links {
+  float: left;
+  width: 190px;
+  background: var(--soft);
+}
+
+.quick-links h2 {
+  font-size: 18px;
+  margin: 0;
+  padding: 12px 10px 0;
+}
+
+.quick-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 8px 12px;
+}
+
+.quick-links li {
+  margin: 0 0 14px;
+  font-size: 12px;
+}
+
+.quick-links img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.quick-links a {
+  vertical-align: middle;
+}
+
+.services-column {
+  float: right;
+  width: 510px;
+}
+
+.rule {
+  height: 1px;
+  margin: 16px 0;
+  background: var(--rule);
+}
+
+.about-layout {
+  overflow: hidden;
+}
+
+.storefront-figure {
+  float: left;
+  width: 180px;
+  margin: 0 10px 0 0;
+}
+
+.about-copy {
+  float: right;
+  width: 320px;
+}
+
+.visit-section {
+  margin-top: 18px;
+  background: var(--highlight);
+  padding: 12px;
+}
+
+.visit-grid {
+  overflow: hidden;
+}
+
+.visit-card {
+  float: left;
+  width: 50%;
+}
+
+.visit-card address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.site-footer {
+  padding: 12px 0 18px;
+  text-align: center;
   font-size: 11px;
   color: #666666;
 }
 
-.footertext a {
-  font-family: Arial, Helvetica, sans-serif;
+.footer-nav {
+  margin-bottom: 18px;
+}
+
+.footer-nav a {
   font-size: 11px;
 }
 
-/* old notes
-.green { color: #315C3D; }
-*/
-
-td {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+.site-footer p {
+  margin: 0 0 6px;
 }
 
-/* duplicate link rules from later update */
-a:link {
-  color: #285B39;
-}
-
-a:visited {
-  color: #6C4E32;
-}
-
-a:active {
-  color: #993300;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
