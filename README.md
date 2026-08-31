@@ -1,28 +1,31 @@
-# WebWorks Studio
+# Southtown Plant Co. — Week 2 Inherited Client Site
 
-Week 1 Studio Onboarding project for WebWorks Studio.
+## Scenario
+WebWorks Studio has inherited this small-business website from a previous developer.
 
-## Developer
-Daisy Sandoval
+The site is functional, but the underlying front-end code reflects practices common in older websites. Your assignment is to modernize the code while preserving the client's content and general visual identity.
 
-## Role
-Junior Web Developer
-
-## Project
-Studio Onboarding & GitHub Workspace Setup
-
-## Live Site
-https://daisys101.github.io/webworks-studio/
-
-## Week 1 Requirements
-- Edit project files in Visual Studio Code.
-- Replace `YOUR NAME` in `index.html` and this README.
-- Change the Studio Status in `index.html` to `Ready for Client Work`.
-- Test the site locally before and after editing.
-- Commit and push your work to your public GitHub repository.
-- Publish the site with GitHub Pages.
-- Replace `GITHUB PAGES URL` above with the working published site URL.
-- Commit and push the final README update.
+## Before You Edit
+1. Keep an untouched copy of this starter project.
+2. Put your working copy in:
+   `webworks-studio/week02-build-better/`
+3. Open the entire project folder in Visual Studio Code.
+4. Preview `index.html` in a browser.
+5. Resize the browser window and observe the existing behavior before you change anything.
 
 ## Important
-Do not add private information such as a student ID, home address, phone number, personal email address, passwords, or authentication tokens to this public repository.
+The inherited site is intentionally **not responsive**.
+
+Do not simply redesign the site from scratch. Refactor it according to the requirements in the Week 2 Canvas assignment.
+
+## Preserve
+- Client content
+- General color palette and visual identity
+- Working navigation and links
+- Meaningful image alternative text
+- Required site information
+
+## Your Goal
+Make the code easier for another developer to understand, maintain, and extend.
+
+Refer to the Canvas assignment for all required technical work, GitHub workflow, and submission directions.
