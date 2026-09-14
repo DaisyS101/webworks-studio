@@ -47,7 +47,7 @@ Before submitting, replace the placeholders below with approximately three examp
 **Why:** Gives interactive elements clear keyboard focus and useful hover feedback without changing the semantic HTML.
 
 ## Live Site
-
+https://daisys101.github.io/webworks-studio/ 
 
 ## Reminder
 The Tailwind Play CDN is being used for this instructional sprint only. It is intended for development, not production deployment workflows.
