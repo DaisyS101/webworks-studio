@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hill & Hollow Coffee | Small-Batch Roasters</title>
+
+  <!-- Tailwind Play CDN: for this instructional sprint only -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-stone-100 text-stone-900 antialiased">
+
+  <header class="border-b border-stone-200 bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <a class="font-serif text-2xl font-bold tracking-tight text-stone-900 transition-colors hover:text-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="index.html">Hill &amp; Hollow Coffee</a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-stone-600">
+          <li><a class="transition-colors hover:text-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="#coffee">Coffee</a></li>
+          <li><a class="transition-colors hover:text-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="#story">Our Story</a></li>
+          <li><a class="transition-colors hover:text-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="overflow-hidden border-b border-stone-200 bg-amber-50">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-24 lg:px-8">
+        <div>
+          <p class="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-amber-800">Small-batch roasted in the Texas Hill Country</p>
+
+          <h1 class="max-w-xl font-serif text-5xl font-bold leading-[1.05] tracking-tight text-stone-950 sm:text-6xl">Good coffee. No complicated personality required.</h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-8 text-stone-700">
+            Hill &amp; Hollow Coffee roasts approachable, everyday coffee for
+            people who want something better than grocery-store beans without
+            needing a tasting-wheel vocabulary.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a class="inline-flex justify-center rounded-md bg-stone-900 px-5 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-4" href="#coffee">Shop the roast lineup</a>
+            <a class="inline-flex justify-center rounded-md border border-stone-300 bg-white px-5 py-3 text-sm font-bold text-stone-800 transition-colors hover:border-amber-700 hover:text-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="#story">Meet the roastery</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img
+            class="mx-auto w-full max-w-lg drop-shadow-xl"
+            src="images/coffee-bag.svg"
+            alt="Illustration of a Hill and Hollow Coffee bag beside a ceramic mug">
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white" id="coffee">
+      <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+        <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-800">Roast Lineup</p>
+        <h2 class="mt-3 max-w-2xl font-serif text-4xl font-bold tracking-tight text-stone-950 sm:text-5xl">Three coffees. Zero existential crisis.</h2>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+
+          <article class="flex flex-col border-t-4 border-amber-700 bg-stone-100 p-6 transition-transform hover:-translate-y-1">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-800">Medium Roast</p>
+            <h3 class="mt-3 font-serif text-3xl font-bold text-stone-950">Front Porch</h3>
+            <p class="mt-4 flex-1 leading-7 text-stone-600">
+              Balanced and easygoing with notes of milk chocolate, toasted almond,
+              and brown sugar.
+            </p>
+            <p class="mt-6 border-t border-stone-300 pt-4 text-sm font-semibold text-stone-500">12 oz · Whole Bean</p>
+            <a class="mt-5 font-bold text-amber-800 underline decoration-amber-300 underline-offset-4 transition-colors hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="#visit">Find it at the shop</a>
+          </article>
+
+          <article class="flex flex-col border-t-4 border-yellow-500 bg-stone-100 p-6 transition-transform hover:-translate-y-1">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-800">Light Roast</p>
+            <h3 class="mt-3 font-serif text-3xl font-bold text-stone-950">Daybreak</h3>
+            <p class="mt-4 flex-1 leading-7 text-stone-600">
+              Bright but approachable with citrus, honey, and a clean finish.
+            </p>
+            <p class="mt-6 border-t border-stone-300 pt-4 text-sm font-semibold text-stone-500">12 oz · Whole Bean</p>
+            <a class="mt-5 font-bold text-amber-800 underline decoration-amber-300 underline-offset-4 transition-colors hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="#visit">Find it at the shop</a>
+          </article>
+
+          <article class="flex flex-col border-t-4 border-stone-700 bg-stone-100 p-6 transition-transform hover:-translate-y-1">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-amber-800">Dark Roast</p>
+            <h3 class="mt-3 font-serif text-3xl font-bold text-stone-950">Last Light</h3>
+            <p class="mt-4 flex-1 leading-7 text-stone-600">
+              Deep and smooth with cocoa, caramelized sugar, and a little smoke.
+            </p>
+            <p class="mt-6 border-t border-stone-300 pt-4 text-sm font-semibold text-stone-500">12 oz · Whole Bean</p>
+            <a class="mt-5 font-bold text-amber-800 underline decoration-amber-300 underline-offset-4 transition-colors hover:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-4" href="#visit">Find it at the shop</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-stone-100" id="story">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-2 lg:px-8 lg:py-24">
+        <div class="order-2 md:order-1">
+          <img
+            class="w-full"
+            src="images/roastery.svg"
+            alt="Illustration of a small coffee roastery with sacks, shelves, and a roasting machine">
+        </div>
+
+        <div class="order-1 md:order-2">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-800">Our Story</p>
+          <h2 class="mt-3 font-serif text-4xl font-bold tracking-tight text-stone-950 sm:text-5xl">Roasted for normal mornings.</h2>
+          <p class="mt-6 text-lg leading-8 text-stone-700">
+            Hill &amp; Hollow started with a simple idea: specialty coffee can be
+            excellent without being intimidating.
+          </p>
+          <p class="mt-4 leading-7 text-stone-600">
+            We roast in small batches, keep the lineup focused, and explain coffee
+            in language that sounds like something a human being might actually say.
+          </p>
+
+          <ul class="mt-8 grid gap-3 text-sm font-bold text-stone-800 sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3">
+            <li class="border-l-2 border-amber-600 pl-3">Roasted weekly</li>
+            <li class="border-l-2 border-amber-600 pl-3">Small-batch production</li>
+            <li class="border-l-2 border-amber-600 pl-3">Approachable flavor profiles</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-stone-900 text-white">
+      <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-300">Why Hill &amp; Hollow?</p>
+
+        <div class="mt-8 grid gap-8 md:grid-cols-3">
+          <article class="border-l border-stone-700 pl-5">
+            <h3 class="font-serif text-2xl font-bold">Fresh</h3>
+            <p class="mt-2 leading-7 text-stone-300">Roasted in small batches and dated clearly.</p>
+          </article>
+
+          <article class="border-l border-stone-700 pl-5">
+            <h3 class="font-serif text-2xl font-bold">Simple</h3>
+            <p class="mt-2 leading-7 text-stone-300">A focused lineup instead of 47 nearly identical bags.</p>
+          </article>
+
+          <article class="border-l border-stone-700 pl-5">
+            <h3 class="font-serif text-2xl font-bold">Local</h3>
+            <p class="mt-2 leading-7 text-stone-300">Roasted and packed in the Texas Hill Country.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-amber-700 text-white" id="visit">
+      <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-2 md:items-end lg:px-8 lg:py-20">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-100">Visit the Roastery</p>
+          <h2 class="mt-3 font-serif text-4xl font-bold tracking-tight sm:text-5xl">Come smell what we're roasting.</h2>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-amber-50">
+            Stop by for fresh beans, simple brewing advice, and whatever is coming
+            out of the roaster that day.
+          </p>
+        </div>
+
+        <div class="border-t border-amber-500 pt-6 text-amber-50 md:border-l md:border-t-0 md:pl-8">
+          <p><strong class="text-white">Hill &amp; Hollow Coffee</strong></p>
+          <p class="mt-2">214 Market Road</p>
+          <p>Boerne, TX 78006</p>
+          <p>Tuesday–Saturday · 8 a.m.–4 p.m.</p>
+          <p class="mt-4"><a class="font-bold text-white underline decoration-amber-300 underline-offset-4 transition-colors hover:text-amber-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-amber-700" href="mailto:hello@example.com">hello@example.com</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-stone-950 text-stone-400">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-8 text-sm sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <p><strong class="text-stone-200">Hill &amp; Hollow Coffee</strong></p>
+      <p>Roasted in the Texas Hill Country.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
