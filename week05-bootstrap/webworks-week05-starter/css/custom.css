@@ -26,3 +26,29 @@
   If you find yourself writing large overrides or repeated !important
   declarations, reconsider your Bootstrap structure/classes first.
 */
+
+:root {
+  --cedar-deep: #203c35;
+  --cedar-accent: #a86643;
+  --cedar-cream: #f5f0e7;
+  --cedar-soft: #e8efeb;
+  --cedar-charcoal: #26312d;
+  --cedar-muted: #5d6a64;
+}
+
+body { color: var(--cedar-charcoal); background: var(--cedar-cream); }
+.site-navbar, .site-footer { background: var(--cedar-deep); }
+.hero-section, .process-section, .contact-section { background: var(--cedar-soft); }
+.hero-section img, #about img { border: 1px solid rgba(32, 60, 53, 0.12); }
+.eyebrow { color: var(--cedar-accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.section-heading { max-width: 34rem; }
+.btn-primary { --bs-btn-bg: var(--cedar-accent); --bs-btn-border-color: var(--cedar-accent); --bs-btn-hover-bg: #8e5336; --bs-btn-hover-border-color: #8e5336; --bs-btn-active-bg: #78452e; --bs-btn-active-border-color: #78452e; }
+.btn-outline-primary { --bs-btn-color: var(--cedar-deep); --bs-btn-border-color: var(--cedar-deep); --bs-btn-hover-bg: var(--cedar-deep); --bs-btn-hover-border-color: var(--cedar-deep); --bs-btn-active-bg: #162b26; --bs-btn-active-border-color: #162b26; }
+.service-card { border-color: rgba(32, 60, 53, 0.16); background: #fffdf9; }
+.service-card .card-img-top { aspect-ratio: 600 / 280; object-fit: cover; }
+.link-arrow, .contact-details a { color: var(--cedar-deep); font-weight: 700; }
+.process-list .list-group-item { padding: 1.25rem 1rem; color: var(--cedar-charcoal); background: transparent; border-color: rgba(32, 60, 53, 0.18); }
+.process-list .list-group-item::before { color: var(--cedar-accent); font-weight: 700; }
+.process-list span { color: var(--cedar-muted); }
+.site-footer { color: var(--cedar-cream); }
+@media (min-width: 992px) { .py-lg-6 { padding-top: 6rem !important; padding-bottom: 6rem !important; } }
