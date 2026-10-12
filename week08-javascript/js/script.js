@@ -19,15 +19,18 @@
 // PART 1 — DIFFICULTY DISCLOSURE
 // ======================================================
 
-const difficultyToggle = document.querySelector("#difficulty-toggle");
+const difficultyButton = document.querySelector("#difficulty-toggle");
 const difficultyPanel = document.querySelector("#difficulty-panel");
 
 
-// The panel's hidden state is the source of truth for both visibility and ARIA.
-difficultyToggle.addEventListener("click", () => {
-  const nextIsOpen = difficultyPanel.hidden;
-  difficultyPanel.hidden = !nextIsOpen;
-  difficultyToggle.setAttribute("aria-expanded", String(nextIsOpen));
+difficultyButton.addEventListener("click", () => {
+  const isOpen = !difficultyPanel.hidden;
+
+
+  difficultyPanel.hidden = isOpen;
+
+
+  difficultyButton.setAttribute("aria-expanded", String(!isOpen));
 });
 
 
@@ -43,24 +46,17 @@ hikeForm.addEventListener("invalid", () => {
   formFeedback.textContent = "";
 }, true);
 
-
 hikeForm.addEventListener("submit", (event) => {
-
-
-  if (!hikeForm.checkValidity()) {
-    hikeForm.reportValidity();
-    return;
-  }
 
 
   event.preventDefault();
 
 
-  const formData = new FormData(hikeForm);
-  const trail = formData.get("trail");
-  const experience = formData.get("experience");
-  const hours = hikeForm.elements.hours.selectedOptions[0].textContent;
+  const trail = hikeForm.elements.namedItem("trail").value;
+  const experience = hikeForm.elements.namedItem("experience").value;
+  const hours = hikeForm.elements.namedItem("hours").selectedOptions[0].textContent;
 
 
-  formFeedback.textContent = `Your plan is ready: ${trail}; experience level: ${experience}; time available: ${hours}. Check current weather and trail conditions before you go.`;
+  formFeedback.textContent = `Plan reviewed: ${trail}. Experience level: ${experience}; time available: ${hours.toLowerCase()}. Check current conditions before you go.`;
+  console.log("Plan submitted.");
 });

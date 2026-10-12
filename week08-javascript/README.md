@@ -14,40 +14,40 @@
 ### Decision 1 — DOM Selection
 What elements did your script need to select, and why?
 
-The script selects `#difficulty-toggle` and `#difficulty-panel` to control the supplied disclosure, plus `#hike-form` and `#form-feedback` to handle planning and show its response. The supplied HTML IDs are used without changing the markup.
+The script selects `#difficulty-toggle` and `#difficulty-panel` so it can control the supplied disclosure, plus `#hike-form` and `#form-feedback` to handle planning submissions and show a response. The selectors use IDs already provided by the HTML.
 
 ### Decision 2 — Event Handling
 What events did you listen for? Why were those events appropriate?
 
-The difficulty button listens for `click`; native buttons translate mouse clicks, Enter, and Space into this event. The form listens for `submit`, so keyboard submission and submit-button activation use the same logic. A capturing `invalid` listener clears outdated success feedback when native validation rejects the form.
+The difficulty button listens for `click`, which also supports keyboard activation because it is a native button. The form listens for `submit`, so both keyboard and button submissions use the same behavior. It also listens for captured `invalid` events to clear any old success message without cancelling the browser's validation.
 
 ### Decision 3 — State / DOM Update
 How did the interface change after user action?
 
-The disclosure toggles the panel's `hidden` property and updates `aria-expanded` to the same open/closed state. A valid form submission is kept on the page and writes a confirmation containing the selected trail, experience level, and available time into the feedback region.
+The disclosure checks whether its panel is hidden, toggles the `hidden` property, and updates `aria-expanded` to the resulting open/closed state. A valid form submission is prevented from navigating away, then the selected trail, experience, and available time are summarized in the feedback region using `textContent`.
 
 ### Decision 4 — Accessibility
 How did you preserve or improve keyboard/accessibility behavior?
 
-The existing button remains keyboard-operable, its `aria-controls` relationship is preserved, and `aria-expanded` tracks the panel's visibility. Required form controls retain browser-native constraint validation. Feedback is written into the existing `role="status"` / `aria-live="polite"` region.
+The supplied native button can be activated with Enter or Space and keeps `aria-expanded` synchronized with the visible panel. Required form fields retain native browser validation. The feedback region keeps its supplied `role="status"` and polite live announcement.
 
 ---
 
 ## Testing Notes
 
 ### Difficulty Disclosure
-- Mouse: Opened and closed repeatedly; visibility followed the button state.
-- Keyboard: Tab reached the button; Enter opened it and Space closed it.
-- `aria-expanded`: Changed between `false` and `true` with panel visibility.
-- Console errors: No page errors during browser testing.
+- Mouse: Opened and closed the explanation repeatedly.
+- Keyboard: The native button supports Tab focus and Enter/Space activation.
+- `aria-expanded`: Changes between `false` and `true` with panel visibility.
+- Console errors: None observed during manual checks.
 
 ### Planning Form
-- Empty/invalid submission: Native validation blocked empty and partial forms; success feedback stayed empty. After a valid submission, a later invalid attempt cleared the old confirmation.
-- Valid submission: Juniper Creek Loop / Beginner / about 2 hours and Painted Bluff Trail / Experienced / 4+ hours both produced matching feedback.
-- Keyboard: Submitted a valid plan using Enter.
-- Console errors: No page errors during browser testing.
+- Empty/invalid submission: Native required-field validation prevents success feedback; the invalid event clears any earlier message.
+- Valid submission: Feedback includes the chosen trail, experience, and available time.
+- Keyboard: The form's submit event supports keyboard submission as well as the submit button.
+- Console errors: None observed during manual checks.
 
 ---
 
 ## Live Site
-[Add the published GitHub Pages URL here if this project is deployed.]
+GitHub Pages URL: [Add the published URL here if this project is deployed.]
