@@ -62,7 +62,7 @@ Document approximately three important decisions.
 
 ### Decision 1
 **Problem:**  design the website to be vieable.
-**Design response:**  in an efrot to make is seem nice and professional
+**Design response:**  in an effort to make is seem nice and professional
 **Why:**  if not presentable then how else will Maya be able to find what she is looking for.
 
 ### Decision 2
