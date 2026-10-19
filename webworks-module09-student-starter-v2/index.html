@@ -59,41 +59,40 @@
         <p class="mt-3 text-lg text-slate-600">The market includes returning artists and first-time vendors. Use this content as the basis for your Alpine-powered exploration tool.</p>
       </div>
 
-      <!-- TODO: REQUIRED ALPINE INTERACTION
-           Add one purposeful Alpine-powered exploration tool here.
-           Requirements:
-           - x-data
-           - at least one user event
-           - at least one additional reactive directive
-           - visible, understandable interface response
-           - semantic, keyboard-accessible controls
-           Do NOT simply paste the classroom playground unchanged. -->
+      <div x-data="{ category: 'all' }" class="mt-8">
+        <div class="max-w-sm">
+          <label for="maker-category" class="block font-bold text-[#142b3a]">Explore makers by craft</label>
+          <select id="maker-category" x-model="category" class="mt-2 min-h-12 w-full rounded-lg border-stone-400 bg-white px-4 py-3 text-slate-800 shadow-sm focus:border-[#246b63] focus:outline-none focus:ring-2 focus:ring-[#246b63]">
+            <option value="all">All crafts</option>
+            <option value="ceramics">Ceramics</option>
+            <option value="prints">Printmaking</option>
+            <option value="textiles">Textiles</option>
+            <option value="woodcraft">Woodcraft</option>
+          </select>
+        </div>
+        <p class="mt-3 min-h-6 text-sm font-semibold text-[#174f49]" role="status" aria-live="polite" x-text="category === 'all' ? 'Showing all four makers.' : 'Showing makers in ' + (category === 'prints' ? 'Printmaking' : category.charAt(0).toUpperCase() + category.slice(1)) + '.'"></p>
 
-      <div class="mt-8 rounded-xl border-2 border-dashed border-[#7da59c] bg-[#eef5f4] p-5">
-        <p class="font-bold text-[#174f49]">Student work area: Alpine interaction</p>
-        <p class="mt-1 text-sm leading-6 text-slate-700">Decide what would genuinely help a visitor explore these makers, then implement that behavior using Alpine.</p>
-      </div>
-
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <article data-category="ceramics" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
+        <div id="maker-list" class="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <article x-show="category === 'all' || category === 'ceramics'" data-category="ceramics" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
           <img src="images/ceramics.svg" alt="Handmade ceramic mugs displayed at a market table" class="aspect-[3/2] w-full object-cover">
           <div class="p-5"><p class="text-sm font-bold uppercase tracking-wide text-[#246b63]">Ceramics</p><h3 class="mt-2 text-xl font-bold text-[#142b3a]">Cielo Clay Studio</h3><p class="mt-2 text-sm leading-6 text-slate-600">Small-batch mugs, bowls, and serving pieces inspired by desert colors and South Texas skies.</p><p class="mt-4 text-sm"><strong>Booth:</strong> A12</p></div>
         </article>
 
-        <article data-category="prints" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
+        <article x-show="category === 'all' || category === 'prints'" data-category="prints" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
           <img src="images/printmaking.svg" alt="Colorful art prints hanging in a local maker booth" class="aspect-[3/2] w-full object-cover">
           <div class="p-5"><p class="text-sm font-bold uppercase tracking-wide text-[#246b63]">Printmaking</p><h3 class="mt-2 text-xl font-bold text-[#142b3a]">Rio Press Co.</h3><p class="mt-2 text-sm leading-6 text-slate-600">Hand-pulled prints featuring native plants, neighborhood architecture, and regional landmarks.</p><p class="mt-4 text-sm"><strong>Booth:</strong> B04</p></div>
         </article>
 
-        <article data-category="textiles" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
+        <article x-show="category === 'all' || category === 'textiles'" data-category="textiles" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
           <img src="images/textiles.svg" alt="Handwoven textiles and fabric goods at a market stand" class="aspect-[3/2] w-full object-cover">
           <div class="p-5"><p class="text-sm font-bold uppercase tracking-wide text-[#246b63]">Textiles</p><h3 class="mt-2 text-xl font-bold text-[#142b3a]">Luna Loom Works</h3><p class="mt-2 text-sm leading-6 text-slate-600">Handwoven scarves, table runners, and small home goods in natural fibers and muted colors.</p><p class="mt-4 text-sm"><strong>Booth:</strong> C07</p></div>
         </article>
 
-        <article data-category="woodcraft" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
+        <article x-show="category === 'all' || category === 'woodcraft'" data-category="woodcraft" class="overflow-hidden rounded-2xl border border-stone-300 bg-white shadow-sm">
           <img src="images/woodcraft.svg" alt="Handcrafted wooden serving boards on display" class="aspect-[3/2] w-full object-cover">
           <div class="p-5"><p class="text-sm font-bold uppercase tracking-wide text-[#246b63]">Woodcraft</p><h3 class="mt-2 text-xl font-bold text-[#142b3a]">Mesquite &amp; Main</h3><p class="mt-2 text-sm leading-6 text-slate-600">Serving boards, trays, and small household pieces made from reclaimed and locally sourced wood.</p><p class="mt-4 text-sm"><strong>Booth:</strong> D03</p></div>
         </article>
+        </div>
       </div>
     </section>
 
@@ -130,23 +129,56 @@
         <p class="mt-3 text-lg text-slate-600">This section contains useful content that could benefit from a reusable interface component.</p>
       </div>
 
-      <!-- TODO: REQUIRED PRELINE COMPONENT
-           Choose ONE appropriate Preline component and adapt it here.
-           Possible directions: accordion, tabs, modal, dropdown, alert,
-           or another instructor-approved Preline component.
-           Use official Preline documentation. -->
+      <div class="hs-accordion-group mt-8 space-y-3">
+        <div class="hs-accordion overflow-hidden rounded-xl border border-stone-300 bg-white shadow-sm" id="market-faq-children">
+          <h3>
+            <button id="market-faq-children-toggle" class="hs-accordion-toggle flex min-h-14 w-full items-center justify-between gap-4 px-5 py-4 text-left font-bold text-[#142b3a] hover:bg-[#eef5f4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#246b63]" aria-expanded="false" aria-controls="market-faq-children-panel">
+              <span>Can I bring children?</span>
+              <svg class="size-5 shrink-0 transition-transform hs-accordion-active:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div id="market-faq-children-panel" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="market-faq-children-toggle">
+            <p class="px-5 pb-5 text-sm leading-6 text-slate-600">Yes. The market is family-friendly. Children should remain with an adult, especially during live demonstrations.</p>
+          </div>
+        </div>
 
-      <div class="mt-8 rounded-xl border-2 border-dashed border-amber-500 bg-amber-50 p-5">
-        <p class="font-bold text-amber-900">Student work area: Preline component</p>
-        <p class="mt-1 text-sm leading-6 text-amber-950">Choose a component because it improves this client content—not simply because the component looks interesting.</p>
+        <div class="hs-accordion overflow-hidden rounded-xl border border-stone-300 bg-white shadow-sm" id="market-faq-pets">
+          <h3>
+            <button id="market-faq-pets-toggle" class="hs-accordion-toggle flex min-h-14 w-full items-center justify-between gap-4 px-5 py-4 text-left font-bold text-[#142b3a] hover:bg-[#eef5f4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#246b63]" aria-expanded="false" aria-controls="market-faq-pets-panel">
+              <span>Are pets allowed?</span>
+              <svg class="size-5 shrink-0 transition-transform hs-accordion-active:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div id="market-faq-pets-panel" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="market-faq-pets-toggle">
+            <p class="px-5 pb-5 text-sm leading-6 text-slate-600">Only trained service animals are allowed inside Mission Plaza Arts Hall.</p>
+          </div>
+        </div>
+
+        <div class="hs-accordion overflow-hidden rounded-xl border border-stone-300 bg-white shadow-sm" id="market-faq-online">
+          <h3>
+            <button id="market-faq-online-toggle" class="hs-accordion-toggle flex min-h-14 w-full items-center justify-between gap-4 px-5 py-4 text-left font-bold text-[#142b3a] hover:bg-[#eef5f4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#246b63]" aria-expanded="false" aria-controls="market-faq-online-panel">
+              <span>Can I buy items online later?</span>
+              <svg class="size-5 shrink-0 transition-transform hs-accordion-active:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div id="market-faq-online-panel" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="market-faq-online-toggle">
+            <p class="px-5 pb-5 text-sm leading-6 text-slate-600">Many vendors sell online, but availability varies. Ask the maker for a business card or website before you leave.</p>
+          </div>
+        </div>
+
+        <div class="hs-accordion overflow-hidden rounded-xl border border-stone-300 bg-white shadow-sm" id="market-faq-indoor">
+          <h3>
+            <button id="market-faq-indoor-toggle" class="hs-accordion-toggle flex min-h-14 w-full items-center justify-between gap-4 px-5 py-4 text-left font-bold text-[#142b3a] hover:bg-[#eef5f4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#246b63]" aria-expanded="false" aria-controls="market-faq-indoor-panel">
+              <span>Is the event indoors?</span>
+              <svg class="size-5 shrink-0 transition-transform hs-accordion-active:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </h3>
+          <div id="market-faq-indoor-panel" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="market-faq-indoor-toggle">
+            <p class="px-5 pb-5 text-sm leading-6 text-slate-600">Yes. The maker booths and demonstrations are indoors. Food vendors are located on the covered south patio.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-7 grid gap-5 md:grid-cols-2">
-        <article class="rounded-xl border border-stone-300 bg-white p-5"><h3 class="text-lg font-bold text-[#142b3a]">Can I bring children?</h3><p class="mt-2 text-sm leading-6 text-slate-600">Yes. The market is family-friendly. Children should remain with an adult, especially during live demonstrations.</p></article>
-        <article class="rounded-xl border border-stone-300 bg-white p-5"><h3 class="text-lg font-bold text-[#142b3a]">Are pets allowed?</h3><p class="mt-2 text-sm leading-6 text-slate-600">Only trained service animals are allowed inside Mission Plaza Arts Hall.</p></article>
-        <article class="rounded-xl border border-stone-300 bg-white p-5"><h3 class="text-lg font-bold text-[#142b3a]">Can I buy items online later?</h3><p class="mt-2 text-sm leading-6 text-slate-600">Many vendors sell online, but availability varies. Ask the maker for a business card or website before you leave.</p></article>
-        <article class="rounded-xl border border-stone-300 bg-white p-5"><h3 class="text-lg font-bold text-[#142b3a]">Is the event indoors?</h3><p class="mt-2 text-sm leading-6 text-slate-600">Yes. The maker booths and demonstrations are indoors. Food vendors are located on the covered south patio.</p></article>
-      </div>
     </section>
   </main>
 

@@ -38,7 +38,7 @@ Preview `index.html` with Live Server.
 - responsive client page
 - accessible baseline HTML
 - client content and starter images
-- clearly marked Alpine and Preline work areas
+- Alpine maker-category filter and Preline visitor FAQ accordion
 - Mac/Windows-friendly npm scripts
 
 ### Versions
@@ -63,11 +63,8 @@ Required:
 - visible, understandable interface response
 - semantic, keyboard-accessible controls
 
-Search `index.html` for:
-
-`TODO: REQUIRED ALPINE INTERACTION`
-
-Do not copy the classroom Alpine playground unchanged.
+The Featured Makers section contains a category filter for ceramics, printmaking,
+textiles, and woodcraft. Do not copy the classroom Alpine playground unchanged.
 
 # Requirement 2 — Adapted Preline Component
 
@@ -92,9 +89,8 @@ Required:
 - preserve accessibility behavior
 - work at narrow, medium, and wide widths
 
-Search `index.html` for:
-
-`TODO: REQUIRED PRELINE COMPONENT`
+The Visitor Questions section uses a Preline accordion to keep answers easy to
+scan while allowing visitors to open the details they need.
 
 # Scope Rule
 
@@ -149,59 +145,73 @@ Commit both files.
 
 Do not commit `node_modules/`.
 
-# Required README Documentation
-
-Replace each TODO before submitting.
+# Project Documentation
 
 ## Project Summary
 
-TODO
+This project adapts the Mission City Makers Market page with a reactive maker
+category filter built in Alpine.js and a Preline accordion for visitor FAQs.
+Tailwind CSS styles both interactions to match the market's visual design.
 
 ## Alpine Decision
 
 **User/client need:**  
-TODO
+Visitors can filter the four featured makers by craft instead of scanning every
+maker card.
 
 **Alpine directives used:**  
-TODO
+`x-data` stores the selected category, `x-model` binds the native select to that
+state, `x-show` filters the cards, and `x-text` announces the current results.
 
 **Why Alpine was appropriate:**  
-TODO
+This is small, page-specific behavior with one piece of state and no need for a
+larger framework or a custom-built select control.
 
 ## Preline Decision
 
 **Preline component selected:**  
-TODO
+Preline accordion.
 
 **Problem it solves:**  
-TODO
+Visitors can expand just the FAQ answers they need instead of scanning a long
+block of answers.
 
 **How you adapted it:**  
-TODO
+The documented `hs-accordion-group`, `hs-accordion`, `hs-accordion-toggle`,
+and `hs-accordion-content` structure is styled with the market's teal, stone,
+and white palette, visible focus rings, and comfortable touch-sized buttons.
 
 ## Accessibility Notes
 
-1. TODO
-2. TODO
+1. The maker filter uses a programmatically associated `<label>` and a native
+   `<select>`, which supports keyboard input without custom keyboard scripting.
+2. The FAQ uses native `<button>` controls, visible focus styling, and
+   `aria-controls`, `aria-expanded`, `aria-labelledby`, and `role="region"`
+   relationships.
 
 ## Testing Notes
 
-**Narrow viewport:** TODO  
-**Medium viewport:** TODO  
-**Wide viewport:** TODO  
-**Keyboard testing:** TODO  
-**Browser console:** TODO
+Complete these hands-on checks before submitting:
+
+**Narrow viewport:** TODO — record the viewport size and what you verified.  
+**Medium viewport:** TODO — record the viewport size and what you verified.  
+**Wide viewport:** TODO — record the viewport size and what you verified.  
+**Keyboard testing:** TODO — test the filter and FAQ using only the keyboard.  
+**Browser console:** TODO — check for errors and record the result.
 
 ## Dependencies
 
-**Alpine.js — how used:** TODO  
-**Preline UI — how used:** TODO  
-**Tailwind CSS — how used:** TODO
+**Alpine.js — how used:** Supplied Alpine.js 3.17.1 CDN script provides the
+reactive maker-category filter in `index.html`.  
+**Preline UI — how used:** Preline UI 4.2.0 provides the visitor FAQ accordion;
+its runtime is copied to `js/vendor/preline.js` by the supplied project script.  
+**Tailwind CSS — how used:** Supplied Tailwind CSS 4.3.3 styles the page,
+responsive grids, focus states, and accordion presentation.
 
 ## Official Documentation Used
 
-- Alpine.js: TODO
-- Preline UI: TODO
+- Alpine.js `x-model`: https://alpinejs.dev/directives/model
+- Preline UI Accordion: https://preline.co/docs/components/accordion.html
 
 # Official References
 
@@ -218,6 +228,8 @@ TODO
 - [ ] Alpine interaction works.
 - [ ] Preline component works.
 - [ ] They solve different needs.
+- [ ] Narrow, medium, and wide viewport checks are recorded above.
+- [ ] Keyboard and browser-console checks are recorded above.
 - [ ] Keyboard testing works.
 - [ ] Responsive testing is complete.
 - [ ] Console has no unresolved errors.
